@@ -1,2 +1,3 @@
+https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/odissei.ttl
+https://w3id.org/example
 odissei.ttl
-odissei2.ttl

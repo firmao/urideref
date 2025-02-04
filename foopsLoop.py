@@ -29,6 +29,7 @@ def process_ontologies(file_url):
     
     for idx, ontology_uri in enumerate(ontology_list, start=1):
         if ontology_uri.strip():  # Ensure it's not an empty line
+            print(ontology_uri)
             result = assess_ontology(ontology_uri.strip())
             output_filename = f"ontology_assessment_{idx}.json"
             with open(output_filename, "w", encoding="utf-8") as f:
@@ -36,5 +37,5 @@ def process_ontologies(file_url):
             print(f"Saved: {output_filename}")
 
 # Example usage
-file_url = "https://example.com/ontology_list.txt"  # Replace with actual URL
+file_url = "https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/ontology_list.txt"  # Replace with actual URL
 process_ontologies(file_url)
