@@ -1,0 +1,272 @@
+{
+    "ontology_URI": "odissei.ttl",
+    "ontology_title": "unknown",
+    "ontology_license": "unknown",
+    "overall_score": 0.0,
+    "checks": [
+        {
+            "id": "CN1",
+            "principle_id": "A1",
+            "category_id": "Accessible",
+            "status": "error",
+            "title": "Content negotiation for RDF and HTML",
+            "explanation": "Ontology not available in RDF or HTML",
+            "description": "This check verifies of the ontology URI is published following the right content negotiation for RDF and HTML",
+            "total_passed_tests": 0,
+            "total_tests_run": 2
+        },
+        {
+            "id": "PURL1",
+            "principle_id": "F1",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Persistent URL",
+            "explanation": "Ontology URI is not using a persistent id. We checked w3id, purl, DOI and W3C",
+            "description": " This check verifies if the ontology has a persistent URL (w3id, purl, DOI, or a W3C URL)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "URI1",
+            "principle_id": "F1",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Ontology URI is resolvable",
+            "explanation": "Ontology URL is not resolvable",
+            "description": "This check verifies if the ontology URI found within the ontology document is resolvable",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "DOC1",
+            "principle_id": "R1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "HTML availability",
+            "explanation": "Ontology not available in HTML",
+            "description": "This check verifies if the ontology has an HTML documentation",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "RDF1",
+            "principle_id": "I1",
+            "category_id": "Interoperable",
+            "status": "error",
+            "title": "RDF Availability",
+            "explanation": "Ontology not available in RDF (RDF/XML, Turtle, JSON-LD or N3)",
+            "description": "This check verifies if the ontology has an RDF serialization (ttl, n3, rdf/xml, json-ld)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "OM1",
+            "principle_id": "F2",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Minimum metadata",
+            "explanation": "The following metadata was not found: title, description, license, version iri, author, namespace URI",
+            "description": "This check verifies if the The following  minimum metadata [title, description, license, version iri, creator, creationDate, namespace URI] are present in the ontology",
+            "total_passed_tests": 0,
+            "total_tests_run": 6
+        },
+        {
+            "id": "OM2",
+            "principle_id": "R1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Recommended metadata",
+            "explanation": "The following metadata was not found: namespace prefix, version info, creation date, citation. Warning: The following OPTIONAL recommended metadata could not be found: contributor. Please consider adding them if appropriate.",
+            "description": "This check verifies if the following recommended metadata [NS Prefix, version info, creation date, citation] are present in the ontology. It also checks if [contributor] is present, but with no penalty (as no all ontologies may have a contributor)",
+            "total_passed_tests": 0,
+            "total_tests_run": 4
+        },
+        {
+            "id": "OM3",
+            "principle_id": "R1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Detailed metadata",
+            "explanation": "The following metadata was not found: doi, publisher, logo, status, source, issued. Warning: The following OPTIONAL detailed metadata could not be found: previous version, backwards compatibility, modified. Please consider adding them if appropriate.",
+            "description": "This check verifies if the following detailed metadata [doi, publisher, logo, status, source, issued date] are present in the ontology. It also checks if [previous version, backward compatibility, modified] are present, but with no penalty (as no all ontologies may have, e.g., a previous version)",
+            "total_passed_tests": 0,
+            "total_tests_run": 6
+        },
+        {
+            "id": "OM4.1",
+            "principle_id": "R1.1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "License availability",
+            "explanation": "License or rights not found",
+            "description": "This check verifies if a license associated with the ontology",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "OM4.2",
+            "principle_id": "R1.1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "License is resolvable",
+            "explanation": "License or rights not found",
+            "description": "This check verifies if the ontology license is resolvable",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "OM5_1",
+            "principle_id": "R1.2",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Basic provenance metadata",
+            "explanation": "The following provenance information was not found: creation date, author. Warning: The following OPTIONAL provenance metadata could not be found: contributor, previous version. Please consider adding them if appropriate.",
+            "description": "This check verifies if basic provenance is available for the ontology: [author, creation date]. This check also verifies whether [contributor, previous version] are present, but with no penalty (as no all ontologies may have a previous version or a contributor)",
+            "total_passed_tests": 0,
+            "total_tests_run": 2
+        },
+        {
+            "id": "OM5_2",
+            "principle_id": "R1.2",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Detailed provenance metadata",
+            "explanation": "The following provenance information was not found: issued, publisher",
+            "description": "This check verifies if detailed provenance information is available for the ontology: [issued date, publisher]",
+            "total_passed_tests": 0,
+            "total_tests_run": 2
+        },
+        {
+            "id": "FIND1",
+            "principle_id": "F3",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Ontology prefix",
+            "explanation": "Prefix declaration not found in the ontology",
+            "description": "This check verifies if an ontology prefix is available",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "FIND2",
+            "principle_id": "F4",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Prefix is in registry",
+            "explanation": "No prefix declared in the ontology",
+            "description": "This check verifies if the ontology prefix can be found in prefix.cc or LOV registries. This check also verifies if the prefix resolves to the same namespaceprefix found in the ontology.",
+            "total_passed_tests": 0,
+            "total_tests_run": 2
+        },
+        {
+            "id": "FIND3",
+            "principle_id": "F4",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Ontology in metadata registry",
+            "explanation": "Ontology not found in a public registry",
+            "description": "This check verifies if the ontology can be found in a public registry (LOV)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "FIND_3_BIS",
+            "principle_id": "A2",
+            "category_id": "Accessible",
+            "status": "error",
+            "title": "Metadata are accessible, even when ontology is not",
+            "explanation": "Ontology not found in a public registry",
+            "description": "Metadata are accessible even when the ontology is no longer available. Since the metadata is usually included in the ontology, this check verifies whether the ontology is registered in a public metadata registry (LOV)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "HTTP1",
+            "principle_id": "A1.1",
+            "category_id": "Accessible",
+            "status": "error",
+            "title": "Open protocol",
+            "explanation": "The ontology does not use an open protocol",
+            "description": "This check verifies if the ontology uses an open protocol (HTTP or HTTPS)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "VOC1",
+            "principle_id": "I2",
+            "category_id": "Interoperable",
+            "status": "error",
+            "title": "Vocabulary reuse (metadata)",
+            "explanation": "The ontology does not reuse vocabularies for common metadata",
+            "description": "This check verifies if the ontology reuses other vocabularies for declaring metadata terms",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "VOC2",
+            "principle_id": "I2",
+            "category_id": "Interoperable",
+            "status": "error",
+            "title": "Vocabulary reuse",
+            "explanation": "The ontology does not import/extend other vocabularies.",
+            "description": "This check verifies if the ontology imports/extends other vocabularies (besides RDF, OWL and RDFS)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "VOC3",
+            "principle_id": "R1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Documentation: labels",
+            "explanation": "No ontology terms found",
+            "description": "This check verifies the extent to which all ontology terms have labels (rdfs:label in OWL vocabularies, skos:prefLabel in SKOS vocabularies)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "VOC4",
+            "principle_id": "R1",
+            "category_id": "Reusable",
+            "status": "error",
+            "title": "Documentation: definitions",
+            "explanation": "No ontology terms found",
+            "description": "This check verifies whether all ontology terms have descriptions (rdfs:comment in OWL vocabularies, skos:definition in SKOS vocabularies)",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "VER1",
+            "principle_id": "F1",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Version IRI",
+            "explanation": "Version IRI  not defined",
+            "description": "This check verifies if there is an id for this ontology version, and whether the id is unique (i.e., different from the ontology URI)",
+            "total_passed_tests": 0,
+            "total_tests_run": 2
+        },
+        {
+            "id": "VER2",
+            "principle_id": "F1",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Version IRI resolves",
+            "explanation": "Version IRI is not available, so it could not be resolved",
+            "description": "This check verifies if the version IRI resolves",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        },
+        {
+            "id": "URI2",
+            "principle_id": "F1",
+            "category_id": "Findable",
+            "status": "error",
+            "title": "Consistent ontology IDs",
+            "explanation": "The ontology could not be loaded, so an ontology ID was not found.",
+            "description": "This check verifies if the ontology URI is equal to the ontology ID",
+            "total_passed_tests": 0,
+            "total_tests_run": 1
+        }
+    ]
+}

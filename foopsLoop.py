@@ -38,4 +38,5 @@ def process_ontologies(file_url):
 
 # Example usage
 file_url = "https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/ontology_list.txt"  # Replace with actual URL
+#https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/ontology_list.txt
 process_ontologies(file_url)
