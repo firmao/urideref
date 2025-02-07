@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARQL Query</title>
+    <script>
+        async function executeSparqlQuery() {
+            const endpoint = "https://api.kg.odissei.nl/datasets/odissei/odissei-kg-acceptance/sparql";
+            const query = `PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT ?subject ?label WHERE {
+                ?subject rdfs:label ?label .
+            } LIMIT 10`;
+            
+            const url = endpoint + "?query=" + encodeURIComponent(query) + "&format=json";
+            
+            try {
+                const response = await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' } });
+                const data = await response.json();
+                displayResults(data.results.bindings);
+            } catch (error) {
+                console.error("Error executing SPARQL query:", error);
+            }
+        }
+
+        function displayResults(results) {
+            const output = document.getElementById("results");
+            output.innerHTML = "<h2>Query Results</h2>";
+            results.forEach(result => {
+                output.innerHTML += `<p>${result.subject.value} - ${result.label.value}</p>`;
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>SPARQL Query Executor</h1>
+    <button onclick="executeSparqlQuery()">Run Query</button>
+    <div id="results"></div>
+</body>
+</html>
