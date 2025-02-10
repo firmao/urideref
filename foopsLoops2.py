@@ -13,7 +13,8 @@ def assess_ontology(ontology_uri):
     response = requests.post(url, headers=headers, data=data)
     
     if response.status_code == 200:
-        return response.json().get("overall_score", "No score available")
+        #return response.json().get("overall_score", "No score available")
+        return response.json()
     else:
         return "Error"
 
@@ -31,10 +32,11 @@ def process_ontologies(file_url):
     
     for idx, ontology_uri in enumerate(ontology_list, start=1):
         if ontology_uri.strip():  # Ensure it's not an empty line
-            score = assess_ontology(ontology_uri.strip())
+            fileEval = assess_ontology(ontology_uri.strip())
+            score = fileEval.get("overall_score", "No score available")
             output_filename = f"ontology_assessment_{idx}.json"
             with open(output_filename, "w", encoding="utf-8") as f:
-                json.dump({"overall_score": score}, f, indent=4)
+                json.dump(fileEval, f, indent=4)
             #results.append([output_filename, score])
             results.append([ontology_uri.strip(), score])
             print(f"Saved: {output_filename}")
