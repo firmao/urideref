@@ -34,20 +34,24 @@ def process_ontologies(file_url):
         if ontology_uri.strip():  # Ensure it's not an empty line
             fileEval = assess_ontology(ontology_uri.strip())
             score = fileEval.get("overall_score", "No score available")
+            var_f = fileEval.get("overall_score", "No score available")
+            var_a = fileEval.get("overall_score", "No score available")
+            var_i = fileEval.get("overall_score", "No score available")
+            var_r = fileEval.get("overall_score", "No score available")
             output_filename = f"ontology_assessment_{idx}.json"
             with open(output_filename, "w", encoding="utf-8") as f:
                 json.dump(fileEval, f, indent=4)
             #results.append([output_filename, score])
-            results.append([ontology_uri.strip(), score])
+            results.append([ontology_uri.strip(), var_f, var_a, var_i, var_r, score])
             print(f"Saved: {output_filename}")
     
     # Save results as a table in a CSV file
     with open("ontology_assessment_summary.csv", "w", encoding="utf-8", newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(["File Name", "Overall Score"])
+        writer.writerow(["File Name", "F", "A", "I", "R", "Overall Score"])
         writer.writerows(results)
     print("Saved: ontology_assessment_summary.csv")
 
 # Example usage
-file_url = "https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/ontology_list.txt"  # Replace with actual URL
+file_url = "https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/ontology_list2.txt"  # Replace with actual URL
 process_ontologies(file_url)
