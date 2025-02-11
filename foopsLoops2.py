@@ -34,10 +34,27 @@ def process_ontologies(file_url):
         if ontology_uri.strip():  # Ensure it's not an empty line
             fileEval = assess_ontology(ontology_uri.strip())
             score = fileEval.get("overall_score", "No score available")
-            var_f = fileEval.get("overall_score", "No score available")
-            var_a = fileEval.get("overall_score", "No score available")
-            var_i = fileEval.get("overall_score", "No score available")
-            var_r = fileEval.get("overall_score", "No score available")
+            var_f = 0
+            var_a = 0
+            var_i = 0
+            var_r = 0
+            for item in fileEval['checks']:
+                print(item['id'])
+                print(item['category_id'])
+                print(item['total_passed_tests'])
+                if(item['category_id'] == 'Findable'):
+                    #print("Findable score: ",item['total_passed_tests'])
+                    var_f += int(item['total_passed_tests'])
+                if(item['category_id'] == 'Accessible'):
+                    #print("Accessible score: ",item['total_passed_tests'])
+                    var_a += int(item['total_passed_tests'])
+                if(item['category_id'] == 'Interoperable'):
+                    #print("Accessible score: ",item['total_passed_tests'])
+                    var_i += int(item['total_passed_tests'])
+                if(item['category_id'] == 'Reusable'):
+                    #print("Accessible score: ",item['total_passed_tests'])
+                    var_r += int(item['total_passed_tests'])
+
             output_filename = f"ontology_assessment_{idx}.json"
             with open(output_filename, "w", encoding="utf-8") as f:
                 json.dump(fileEval, f, indent=4)

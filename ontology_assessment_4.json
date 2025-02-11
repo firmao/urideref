@@ -1,8 +1,8 @@
 {
-    "ontology_URI": "http://rdf-vocabulary.ddialliance.org/cv/DataSourceType/1.0.2/",
-    "ontology_title": "Data Source Type",
+    "ontology_URI": "http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure/1.1.4/",
+    "ontology_title": "Sampling Procedure",
     "ontology_license": "http://creativecommons.org/licenses/by/4.0/",
-    "overall_score": 1.2395834,
+    "overall_score": 0.40625,
     "checks": [
         {
             "id": "CN1",
@@ -217,25 +217,23 @@
             "id": "VOC3",
             "principle_id": "R1",
             "category_id": "Reusable",
-            "status": "error",
+            "status": "ok",
             "title": "Documentation: labels",
-            "explanation": "Labels found for 253 out of 23 terms. ",
-            "affected_elements": [],
+            "explanation": "Labels found for all ontology terms",
             "description": "This check verifies the extent to which all ontology terms have labels (rdfs:label in OWL vocabularies, skos:prefLabel in SKOS vocabularies)",
-            "total_passed_tests": 253,
-            "total_tests_run": 23
+            "total_passed_tests": 18,
+            "total_tests_run": 18
         },
         {
             "id": "VOC4",
             "principle_id": "R1",
             "category_id": "Reusable",
-            "status": "error",
+            "status": "ok",
             "title": "Documentation: definitions",
-            "explanation": "Descriptions found for 253 out of 23 terms",
-            "affected_elements": [],
+            "explanation": "Descriptions found for all ontology terms",
             "description": "This check verifies whether all ontology terms have descriptions (rdfs:comment in OWL vocabularies, skos:definition in SKOS vocabularies)",
-            "total_passed_tests": 253,
-            "total_tests_run": 23
+            "total_passed_tests": 18,
+            "total_tests_run": 18
         },
         {
             "id": "VER1",
@@ -265,7 +263,7 @@
             "category_id": "Findable",
             "status": "error",
             "title": "Consistent ontology IDs",
-            "explanation": "Ontology URI is different from ontology ID. Your ontologyURI (e.g., its w3id) should be the same as the one used within the ontology itself. Ontology URI: http://rdf-vocabulary.ddialliance.org/cv/DataSourceType/1.0.2. Provided URI: https://vocabularies.cessda.eu/v2/vocabularies/rdf/DataSourceType/1.0.2?languageVersion=en-1.0.2_et-1.0.2_fi-1.0.2_it-1.0.2_lt-1.0.2_nl-1.0.2_no-1.0.2_pt-1.0.2_sl-1.0.2_sr-1.0.2_sv-1.0.2",
+            "explanation": "Ontology URI is different from ontology ID. Your ontologyURI (e.g., its w3id) should be the same as the one used within the ontology itself. Ontology URI: http://rdf-vocabulary.ddialliance.org/cv/SamplingProcedure/1.1.4. Provided URI: https://vocabularies.cessda.eu/v2/vocabularies/rdf/SamplingProcedure/1.1.4?languageVersion=en-1.1.4",
             "description": "This check verifies if the ontology URI is equal to the ontology ID",
             "total_passed_tests": 0,
             "total_tests_run": 1
