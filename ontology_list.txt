@@ -1,3 +1,10 @@
-https://raw.githubusercontent.com/firmao/urideref/refs/heads/main/odissei.ttl
-https://w3id.org/example
-odissei.ttl
+https://hdl.handle.net/1839/74209f7d-c6ff-4129-8afd-64c78f4d300e
+https://doi.org/10.17026/dans-xc9-mnrf
+https://hdl.handle.net/21.11114/COLL-0000-000B-CABE-C
+https://hdl.handle.net/10032/a0c26986a32c61123dc82bce225bb309
+https://doi.org/10.17026/dans-259-7d63
+https://doi.org/10.57934/0b01e410807c72a7
+https://doi.org/10.57990/1p4d-6443
+https://doi.org/10.17026/SS/JNTYOS
+https://doi.org/10.60641/qkk6-kv80
+https://doi.org/hdl:10622/ON0SRY
