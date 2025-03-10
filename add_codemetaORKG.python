@@ -1,0 +1,55 @@
+import json
+import requests
+
+# ORKG API Endpoint
+ORKG_API_URL = "https://www.orkg.org/api"  # Replace with actual endpoint for software entries
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com"
+
+# Load GitHub URLs from a file
+def load_github_urls(filename):
+    with open(filename, "r") as file:
+        return [line.strip() for line in file if line.strip()]
+
+# Fetch CodeMeta JSON from GitHub repo
+def fetch_codemeta(github_url):
+    try:
+        user_repo = github_url.replace("https://github.com/", "")
+        raw_url = f"{GITHUB_RAW_BASE}/{user_repo}/main/codemeta.json"
+        response = requests.get(raw_url)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching CodeMeta from {github_url}: {e}")
+        return None
+
+# Format data for ORKG API
+def format_for_orkg(codemeta_data):
+    return {
+        "label": codemeta_data.get("name", "Unknown Software"),
+        "description": codemeta_data.get("description", "No description provided."),
+        "authors": [author.get("name", "Unknown") for author in codemeta_data.get("author", [])],
+        "license": codemeta_data.get("license", "Unknown"),
+        "programmingLanguage": codemeta_data.get("programmingLanguage", "Unknown"),
+        "repository": codemeta_data.get("codeRepository", "Unknown"),
+    }
+
+# Submit data to ORKG
+def submit_to_orkg(software_data):
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer YOUR_ORKG_API_KEY"}
+    response = requests.post(f"{ORKG_API_URL}/software", headers=headers, json=software_data)
+    if response.status_code == 201:
+        print(f"Successfully added: {software_data['label']}")
+    else:
+        print(f"Failed to add: {software_data['label']}. Error: {response.text}")
+
+# Main execution
+def main():
+    github_urls = load_github_urls("github_urls.txt")
+    for url in github_urls:
+        codemeta_data = fetch_codemeta(url)
+        if codemeta_data:
+            formatted_data = format_for_orkg(codemeta_data)
+            submit_to_orkg(formatted_data)
+
+if __name__ == "__main__":
+    main()
